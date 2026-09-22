@@ -1,4 +1,5 @@
 streamlit
+reportlab
 fpdf
 qrcode
 pillow
