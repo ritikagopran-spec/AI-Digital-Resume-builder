@@ -20,10 +20,10 @@ if st.button("Generate Resume"):
     st.write(f"### About: {about}")
     st.balloons()
 
-st.metric("ATS Score", "100/100")
+    st.metric("ATS Score", "100/100")
 
- # Create Clean PDF
-    buffer = io.BytesIO()
+    # Create Clean PDF
+    buffer =io.BytesIO()
     c = canvas.Canvas(buffer, pagesize=A4)
     c.setFont("Helvetica-Bold", 18)
     c.drawString(50, 800, name)
@@ -35,7 +35,7 @@ st.metric("ATS Score", "100/100")
     c.setFont("Helvetica", 11)
     c.drawString(50, 700, f"About: {about}")
     c.drawString(50, 670, "ATS Score: 88/100")
-    c.drawString(50, 640, "AKTU University - B.Tech Mini Project")
+    c.drawString(50, 640, " ")
     c.save()
     buffer.seek(0)
     
