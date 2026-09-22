@@ -71,7 +71,7 @@ if submit:
     st.write(f"**Email:** {email} | **Phone:** {phone}")
 
     st.download_button(
-        "📥 Download PRO PDF",
+        " Download PRO PDF",
         data=pdf_bytes,
         file_name=f"{name}_Pro_Resume.pdf",
         mime="application/pdf"
