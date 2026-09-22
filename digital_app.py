@@ -5,14 +5,14 @@ st.set_page_config(page_title="Pro Resume Builder", page_icon="Resume")
 st.title("Pro Resume Builder - AKTU")
 
 with st.form("resume_form"):
-    name = st.text_input("Full Name", "Anchal Gopran")
-    role = st.text_input("Role", "B.Tech CSE Student")
+    name = st.text_input("Full Name", " ")
+    role = st.text_input("Role", " ")
     email = st.text_input("Email", "")
     phone = st.text_input("Phone", "")
-    education = st.text_input("Education", "B.Tech CSE - AKTU")
-    skills = st.text_area("Skills", "Python, AI, Machine Learning")
-    projects = st.text_area("Projects", "AI Digital Resume Builder")
-    about = st.text_area("Objective", "Passionate student")
+    education = st.text_input("Education", " ")
+    skills = st.text_area("Skills", " ")
+    projects = st.text_area("Projects", " ")
+    about = st.text_area("Objective", " ")
     submit = st.form_submit_button("Generate PRO Resume")
 
 if submit:
