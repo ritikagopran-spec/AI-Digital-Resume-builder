@@ -3,11 +3,10 @@ import streamlit as st
 st.set_page_config(page_title="AI Resume Builder", page_icon="🚀")
 
 st.title("🚀 AI Digital Resume Builder")
-st.write("AKTU University - B.Tech Mini Project")
 
-name = st.text_input("Your Name", "Your name")
-role = st.text_input("Role", "Qualification")
-email = st.text_input("Email", "Email")
+name = st.text_input("Your Name", " ")
+role = st.text_input("Role", " ")
+email = st.text_input("Email", " ")
 skills = st.text_area("Skills", " ")
 about = st.text_area("About You", "I am a passionate student...")
 
