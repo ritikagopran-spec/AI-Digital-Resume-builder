@@ -14,7 +14,7 @@ with st.form("form"):
     contact = st.text_input("Contact No", " ")
     objective = st.text_area("Objective", " ")
     course = st.text_input("Course", " ")
-    univerity = st.text_input("Board", " ")
+    univerity = st.text_input("university", " ")
     year = st.text_input("Passing Year", " ")
     perc = st.text_input("Percentage", " ")
     skills = st.text_area("Technical Skills", " ")
@@ -90,7 +90,7 @@ if btn:
     pdf.ln()
     pdf.set_font("Arial","",10)
     pdf.set_x(12)
-    for val in [course, board, year, perc]:
+    for val in [course, university, year, perc]:
         pdf.cell(46.5,7,val,border=1,align="C")
     pdf.ln()
     pdf.ln(5)
