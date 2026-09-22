@@ -5,10 +5,10 @@ st.set_page_config(page_title="AI Resume Builder", page_icon="🚀")
 st.title("🚀 AI Digital Resume Builder")
 st.write("AKTU University - B.Tech Mini Project")
 
-name = st.text_input("Your Name", "ANCHAL")
-role = st.text_input("Role", "B.Tech CSE Student")
-email = st.text_input("Email", "ritikagopran@gmail.com")
-skills = st.text_area("Skills", "Python, AI, Web Dev")
+name = st.text_input("Your Name", "Your name")
+role = st.text_input("Role", "Qualification")
+email = st.text_input("Email", "Email")
+skills = st.text_area("Skills", " ")
 about = st.text_area("About You", "I am a passionate student...")
 
 if st.button("Generate Resume"):
@@ -20,4 +20,28 @@ if st.button("Generate Resume"):
     st.write(f"### About: {about}")
     st.balloons()
 
-st.metric("ATS Score", "88/100")
+st.metric("ATS Score", "100/100")
+
+ # Create Clean PDF
+    buffer = io.BytesIO()
+    c = canvas.Canvas(buffer, pagesize=A4)
+    c.setFont("Helvetica-Bold", 18)
+    c.drawString(50, 800, name)
+    c.setFont("Helvetica", 12)
+    c.drawString(50, 780, role)
+    c.drawString(50, 760, f"Email: {email}")
+    c.setFont("Helvetica-Bold", 14)
+    c.drawString(50, 730, f"Skills: {skills}")
+    c.setFont("Helvetica", 11)
+    c.drawString(50, 700, f"About: {about}")
+    c.drawString(50, 670, "ATS Score: 88/100")
+    c.drawString(50, 640, "AKTU University - B.Tech Mini Project")
+    c.save()
+    buffer.seek(0)
+    
+    st.download_button(
+        label="📄 Download Clean Resume PDF",
+        data=buffer,
+        file_name=f"{name}_Resume.pdf",
+        mime="application/pdf"
+    )
