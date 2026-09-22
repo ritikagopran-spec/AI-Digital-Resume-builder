@@ -1,5 +1,7 @@
 import streamlit as st
 from fpdf import FPDF
+import os
+from PIL import Image
 
 st.set_page_config(page_title="Resume")
 st.title("Resume")
@@ -19,17 +21,28 @@ with st.form("form"):
     hobbies = st.text_area("Hobbies", " ")
     exp = st.text_area("Experience", " ")
     photo = st.file_uploader("Upload Your Photo", type=["jpg","jpeg","png"])
-    btn = st.form_submit_button("Generate PDF with Photo")
+    btn = st.form_submit_button("Generate")
 
 if btn:
+    photo_path = None
+    if photo:
+        # Photo ko sahi tarike se save karna
+        img = Image.open(photo)
+        if img.mode == 'RGBA':
+            img = img.convert('RGB')
+        photo_path = "my_photo.jpg"
+        img.save(photo_path)
+
     pdf = FPDF()
     pdf.add_page()
     pdf.rect(5, 5, 200, 287)
 
-    if photo:
-        with open("temp.jpg","wb") as f:
-            f.write(photo.getbuffer())
-        pdf.image("temp.jpg", x=160, y=8, w=28, h=32)
+    # PHOTO - Fixed position
+    if photo_path and os.path.exists(photo_path):
+        try:
+            pdf.image(photo_path, x=160, y=8, w=28, h=32)
+        except Exception as e:
+            st.error(f"Photo error: {e}")
 
     pdf.set_font("Arial","B",14)
     pdf.cell(0,15,"RESUME",ln=True,align="C")
@@ -68,10 +81,8 @@ if btn:
     grey_bar("Educational Qualifications:")
     pdf.set_font("Arial","B",10)
     pdf.set_x(12)
-    col_w = [46.5, 46.5, 46.5, 46.5]
-    headers = ["Courses", "University/Board", "Passing Year", "Percentage"]
-    for i,h in enumerate(headers):
-        pdf.cell(col_w[i],7,h,border=1,align="C")
+    for h in ["Courses", "University/Board", "Passing Year", "Percentage"]:
+        pdf.cell(46.5,7,h,border=1,align="C")
     pdf.ln()
     pdf.set_font("Arial","",10)
     pdf.set_x(12)
@@ -87,5 +98,5 @@ if btn:
     grey_bar("Experience:")
     content(f"• {exp}")
 
-    st.success("Photo wala resume ready!")
+    st.success("Resume ban gaya!")
     st.download_button("Download Resume", data=bytes(pdf.output()), file_name=f"{name}_Resume.pdf", mime="application/pdf")
