@@ -1,23 +1,23 @@
 import streamlit as st
 from fpdf import FPDF
 
-st.set_page_config(page_title="Classic Resume with Photo")
+st.set_page_config(page_title="Resume")
 st.title("Classic Resume - With Photo")
 
 with st.form("form"):
-    name = st.text_input("Full Name", "Anchal Gopran")
-    addr1 = st.text_input("Address Line 1", "Dev Gopran, Mathura")
-    addr2 = st.text_input("Address Line 2", "Uttar Pradesh - 281001")
-    email = st.text_input("Email", "anchal@gmail.com")
-    contact = st.text_input("Contact No", "6789054321")
-    objective = st.text_area("Objective", "I want to excel in this field with hard work, perseverance and dedication.")
-    course = st.text_input("Course", "B.Tech CSE")
-    board = st.text_input("Board", "AKTU")
-    year = st.text_input("Passing Year", "2028")
-    perc = st.text_input("Percentage", "85%")
-    skills = st.text_area("Technical Skills", "Computer: MS-CIT, Python, Typing: English 40, Hindi 30")
-    hobbies = st.text_area("Hobbies", "Reading Books, Travelling, Coding")
-    exp = st.text_area("Experience", "Fresher / AI Resume Builder Project")
+    name = st.text_input("Full Name", " ")
+    addr1 = st.text_input("Address Line 1", " ")
+    addr2 = st.text_input("Address Line 2", " ")
+    email = st.text_input("Email", " ")
+    contact = st.text_input("Contact No", " ")
+    objective = st.text_area("Objective", " ")
+    course = st.text_input("Course", " ")
+    board = st.text_input("Board", " ")
+    year = st.text_input("Passing Year", " ")
+    perc = st.text_input("Percentage", " ")
+    skills = st.text_area("Technical Skills", " ")
+    hobbies = st.text_area("Hobbies", " ")
+    exp = st.text_area("Experience", " ")
     photo = st.file_uploader("Upload Your Photo", type=["jpg","jpeg","png"])
     btn = st.form_submit_button("Generate PDF with Photo")
 
