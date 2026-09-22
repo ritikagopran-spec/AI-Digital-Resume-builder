@@ -10,17 +10,17 @@ st.title("📄 Pro Resume Builder - AKTU")
 with st.form("resume_form"):
     col1, col2 = st.columns(2)
     with col1:
-        name = st.text_input("Full Name", "Anchal Gopran")
-        role = st.text_input("Role", "B.Tech CSE Student")
-        email = st.text_input("Email", "")
+        name = st.text_input("Full Name", " ")
+        role = st.text_input("Role", " ")
+        email = st.text_input("Email", " ")
         phone = st.text_input("Phone", "")
     with col2:
         linkedin = st.text_input("LinkedIn URL", "")
         photo = st.file_uploader("Upload Photo", type=["jpg","png","jpeg"])
-        education = st.text_input("Education", "B.Tech CSE - AKTU University")
+        education = st.text_input("Education", " ")
 
-    skills = st.text_area("Skills (comma se likho)", "Python, AI, Machine Learning, Streamlit")
-    projects = st.text_area("Projects", "AI Digital Resume Builder - Built with Streamlit and Python")
+    skills = st.text_area("Skills (comma se likho)", " ")
+    projects = st.text_area("Projects", " ")
     about = st.text_area("Career Objective", "Passionate CSE student looking for opportunities in AI/ML.")
 
     submit = st.form_submit_button("🚀 Generate PRO Resume")
