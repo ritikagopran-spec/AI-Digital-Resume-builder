@@ -14,7 +14,7 @@ with st.form("form"):
     contact = st.text_input("Contact No", " ")
     objective = st.text_area("Objective", " ")
     course = st.text_input("Course", " ")
-    univerity = st.text_input("university", " ")
+    university = st.text_input("university", " ")
     year = st.text_input("Passing Year", " ")
     perc = st.text_input("Percentage", " ")
     skills = st.text_area("Technical Skills", " ")
