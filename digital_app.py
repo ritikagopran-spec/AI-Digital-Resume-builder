@@ -85,7 +85,7 @@ if btn:
     grey_bar("Educational Qualifications:")
     pdf.set_font("Arial","B",10)
     pdf.set_x(12)
-    for h in ["Courses", "University/Board", "Passing Year", "Percentage"]:
+    for h in ["Courses", "University", "Passing Year", "Percentage"]:
         pdf.cell(46.5,7,h,border=1,align="C")
     pdf.ln()
     pdf.set_font("Arial","",10)
