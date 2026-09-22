@@ -14,7 +14,7 @@ with st.form("form"):
     contact = st.text_input("Contact No", " ")
     objective = st.text_area("Objective", " ")
     course = st.text_input("Course", " ")
-    board = st.text_input("Board", " ")
+    univerity = st.text_input("Board", " ")
     year = st.text_input("Passing Year", " ")
     perc = st.text_input("Percentage", " ")
     skills = st.text_area("Technical Skills", " ")
@@ -66,7 +66,8 @@ if btn:
     def grey_bar(title):
         pdf.set_fill_color(210,210,210)
         pdf.set_font("Arial","B",11)
-        pdf.cell(186,7,f" {title}",ln=True,fill=True,x=12)
+        pdf.set_x(12)
+        pdf.cell(186,7,f" {title}",ln=True,fill=True)
         pdf.ln(2)
 
     def content(text):
