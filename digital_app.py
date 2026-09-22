@@ -2,7 +2,7 @@ import streamlit as st
 from fpdf import FPDF
 
 st.set_page_config(page_title="Resume")
-st.title("Classic Resume - With Photo")
+st.title("Resume")
 
 with st.form("form"):
     name = st.text_input("Full Name", " ")
